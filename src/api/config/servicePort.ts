@@ -1,3 +1,5 @@
 // 后端微服务端口名
-export const PORT1 = "/hooks";
+export const PORT1 = "/api/hooks";
 export const PORT2 = "/geeker";
+
+export const PORT3 = "/v1";

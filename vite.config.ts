@@ -42,6 +42,11 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
 			// https: false,
 			// 代理跨域（mock 不需要配置，这里只是个事列）
 			proxy: {
+				"/v1": {
+					target: "http://localhost:3000", // 本地 mock
+					changeOrigin: true,
+					rewrite: path => path.replace(/^\/api/, "")
+				},
 				"/api": {
 					target: "https://mock.mengxuegu.com/mock/62abda3212c1416424630a45", // easymock
 					changeOrigin: true,
